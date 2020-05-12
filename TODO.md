@@ -2,9 +2,9 @@
 
 ## TODO
 
--   [ ] Init un nouveau projet JHipster
--   [ ] Créer les entités nécessaires au projet (Event par exemple ?)
--   [ ] Créer la conf Elasticsearch et créer les index
+-   [x] Init un nouveau projet JHipster
+-   [x] Créer les entités nécessaires au projet (Animal par exemple ?)
+-   [x] Créer la conf Elasticsearch et créer les index
 -   [ ] Brancher et coder la solution
 -   [ ] Créer un README pour indiquer les fichiers intéressants pour le code
 -   [ ] Push le tout sur GitHub

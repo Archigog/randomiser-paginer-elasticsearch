@@ -38,6 +38,7 @@ public class CacheConfiguration {
             cm.createCache(tech.ippon.hlegrand.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(tech.ippon.hlegrand.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(tech.ippon.hlegrand.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(tech.ippon.hlegrand.domain.Animal.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

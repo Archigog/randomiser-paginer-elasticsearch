@@ -1,0 +1,23 @@
+{
+    "randomizePaginateElasticsearchApp": {
+        "animal": {
+            "home": {
+                "title": "Animals",
+                "createLabel": "Créer un nouveau Animal",
+                "createOrEditLabel": "Créer ou éditer un Animal",
+                "search": "Recherche pour Animal"
+            },
+            "created": "Un nouveau Animal a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Animal avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Animal avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Animal {{ id }} ?"
+            },
+            "detail": {
+                "title": "Animal"
+            },
+            "name": "Name",
+            "promoted": "Promoted"
+        }
+    }
+}
