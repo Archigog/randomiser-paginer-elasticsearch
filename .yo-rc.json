@@ -1,0 +1,38 @@
+{
+    "generator-jhipster": {
+        "promptValues": {
+            "packageName": "tech.ippon.hlegrand",
+            "nativeLanguage": "fr"
+        },
+        "jhipsterVersion": "5.8.2",
+        "applicationType": "monolith",
+        "baseName": "RandomizePaginateElasticsearch",
+        "packageName": "tech.ippon.hlegrand",
+        "packageFolder": "tech/ippon/hlegrand",
+        "serverPort": "8080",
+        "authenticationType": "jwt",
+        "cacheProvider": "ehcache",
+        "enableHibernateCache": true,
+        "websocket": false,
+        "databaseType": "sql",
+        "devDatabaseType": "h2Disk",
+        "prodDatabaseType": "postgresql",
+        "searchEngine": "elasticsearch",
+        "messageBroker": false,
+        "serviceDiscoveryType": false,
+        "buildTool": "gradle",
+        "enableSwaggerCodegen": false,
+        "jwtSecretKey": "YjU5YmM5MzkxOTBjMTk5ODhmN2ZkMDRhNDMxMWU2ODJiOTBiOTJkMTFlNGJiNmJhZWI2NWRlMmI5ZDJmMjZlYTg2NjJhNTI2ZWVjOGM5MTdkMzJkYmRkM2Q1ZmIwOGI0ZWQ4NjdiMjIyODFmY2RlYWE3ZGY0MTE0OWMxYzhiOTI=",
+        "clientFramework": "angularX",
+        "useSass": true,
+        "clientPackageManager": "npm",
+        "testFrameworks": [],
+        "jhiPrefix": "jhi",
+        "entitySuffix": "",
+        "dtoSuffix": "DTO",
+        "otherModules": [],
+        "enableTranslation": true,
+        "nativeLanguage": "fr",
+        "languages": ["fr", "en"]
+    }
+}
