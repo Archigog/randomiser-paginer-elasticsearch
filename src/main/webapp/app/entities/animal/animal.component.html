@@ -25,49 +25,44 @@
         </div>
     </div>
     <br/>
-    <div class="table-responsive" *ngIf="animals">
-        <table class="table table-striped">
-            <thead>
-            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
-            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="name"><span jhiTranslate="randomizePaginateElasticsearchApp.animal.name">Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="promoted"><span jhiTranslate="randomizePaginateElasticsearchApp.animal.promoted">Promoted</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor="let animal of animals ;trackBy: trackId">
-                <td><a [routerLink]="['/animal', animal.id, 'view' ]">{{animal.id}}</a></td>
-                <td>{{animal.name}}</td>
-                <td>{{animal.promoted}}</td>
-                <td class="text-right">
-                    <div class="btn-group flex-btn-group-container">
+    <div *ngIf="animals" class="row p-5">
+        <div class="col-4 p-3" *ngFor="let animal of animals">
+            <div class="animal card">
+                <button class="promoted" (click)="promoteAnimal(animal)">
+                    <fa-icon *ngIf="animal.promoted" [icon]="['fas', 'star']" [styles]="{'color': 'gold'}"></fa-icon>
+                    <fa-icon *ngIf="!animal.promoted" [icon]="['far', 'star']" [styles]="{'color': 'gold'}"></fa-icon>
+                </button>
+                <div class="card-body row justify-content-center align-items-center p-3">
+                    <p class="animal-name col-12 row align-items-center justify-content-center">{{ animal.name | capitalize }}</p>
+                    <p class="animal-score col-12 row align-items-center justify-content-center">
+                        {{ animal.score | number:'':'fr-FR' }}
+                    </p>
+                    <hr class="col-6"/>
+                    <div class="col-8 btn-group flex-btn-group-container">
                         <button type="submit"
                                 [routerLink]="['/animal', animal.id, 'view' ]"
-                                class="btn btn-info btn-sm">
+                                class="col-4 btn btn-info btn-sm">
                             <fa-icon [icon]="'eye'"></fa-icon>
-                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
                         </button>
                         <button type="submit"
                                 [routerLink]="['/animal', animal.id, 'edit']"
-                                class="btn btn-primary btn-sm">
+                                class="col-4 btn btn-primary btn-sm">
                             <fa-icon [icon]="'pencil-alt'"></fa-icon>
-                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
                         </button>
                         <button type="submit"
                                 [routerLink]="['/', 'animal', { outlets: { popup: animal.id + '/delete'} }]"
                                 replaceUrl="true"
                                 queryParamsHandling="merge"
-                                class="btn btn-danger btn-sm">
+                                class="col-4 btn btn-danger btn-sm">
                             <fa-icon [icon]="'times'"></fa-icon>
-                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
                         </button>
                     </div>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+                </div>
+            </div>
+        </div>
     </div>
+
+
     <div *ngIf="animals && animals.length">
         <div class="row justify-content-center">
             <jhi-item-count [page]="page" [total]="totalItems" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>

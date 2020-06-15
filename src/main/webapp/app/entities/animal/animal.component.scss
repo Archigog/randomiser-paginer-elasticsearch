@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.animal {
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px 1px #2c425199;
+    border: none;
+    transition: all 250ms ease-in-out;
+    position: relative;
+
+    &:hover {
+        box-shadow: 0px 0px 10px 3px #2c425199;
+    }
+
+    .promoted {
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background-color: white;
+        border: none;
+        box-shadow: 0px 0px 10px 1px #2c425199;
+
+        &-icon {
+            background-color: yellow;
+        }
+    }
+
+    &-name {
+        font-family: 'Roboto', sans-serif;
+        font-size: x-large;
+        font-weight: bold;
+        color: #2c4251;
+    }
+
+    &-score {
+        font-family: 'Open Sans', sans-serif;
+        color: #d16666;
+    }
+}

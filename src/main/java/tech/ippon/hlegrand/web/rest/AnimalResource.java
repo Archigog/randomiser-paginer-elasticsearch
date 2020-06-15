@@ -132,9 +132,9 @@ public class AnimalResource {
      * @return the result of the search
      */
     @GetMapping("/_search/animals")
-    public ResponseEntity<List<AnimalDTO>> searchAnimals(@RequestParam String query, Pageable pageable) {
+    public ResponseEntity<List<AnimalDTO>> searchAnimals(@RequestParam String query, String seed, Pageable pageable) {
         log.debug("REST request to search for a page of Animals for query {}", query);
-        Page<AnimalDTO> page = animalService.search(query, pageable);
+        Page<AnimalDTO> page = animalService.search(query, seed, pageable);
         HttpHeaders headers = PaginationUtil.generateSearchPaginationHttpHeaders(query, page, "/api/_search/animals");
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }

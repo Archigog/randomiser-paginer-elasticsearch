@@ -41,4 +41,12 @@ export class AnimalService {
         const options = createRequestOption(req);
         return this.http.get<IAnimal[]>(this.resourceSearchUrl, { params: options, observe: 'response' });
     }
+
+    getImage(animal: string): Observable<any> {
+        return this.http.get(
+            `http://en.wikipedia.org/w/api.php?action=query&titles=${animal
+                .split(' ')
+                .join('-')}&prop=pageimages&format=json&pithumbsize=100`
+        );
+    }
 }

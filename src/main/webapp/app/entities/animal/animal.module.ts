@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { JhiLanguageService } from 'ng-jhipster';
@@ -17,7 +18,7 @@ import {
 const ENTITY_STATES = [...animalRoute, ...animalPopupRoute];
 
 @NgModule({
-    imports: [RandomizePaginateElasticsearchSharedModule, RouterModule.forChild(ENTITY_STATES)],
+    imports: [RandomizePaginateElasticsearchSharedModule, RouterModule.forChild(ENTITY_STATES), CommonModule, CommonModule],
     declarations: [AnimalComponent, AnimalDetailComponent, AnimalUpdateComponent, AnimalDeleteDialogComponent, AnimalDeletePopupComponent],
     entryComponents: [AnimalComponent, AnimalUpdateComponent, AnimalDeleteDialogComponent, AnimalDeletePopupComponent],
     providers: [{ provide: JhiLanguageService, useClass: JhiLanguageService }],

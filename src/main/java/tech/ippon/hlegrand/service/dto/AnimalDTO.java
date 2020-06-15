@@ -1,5 +1,6 @@
 package tech.ippon.hlegrand.service.dto;
-import javax.validation.constraints.*;
+
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -15,29 +16,42 @@ public class AnimalDTO implements Serializable {
 
     private Boolean promoted;
 
+    private Double score;
 
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public AnimalDTO setId(Long id) {
         this.id = id;
+        return this;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public AnimalDTO setName(String name) {
         this.name = name;
+        return this;
     }
 
-    public Boolean isPromoted() {
+    public Boolean getPromoted() {
         return promoted;
     }
 
-    public void setPromoted(Boolean promoted) {
+    public AnimalDTO setPromoted(Boolean promoted) {
         this.promoted = promoted;
+        return this;
+    }
+
+    public Double getScore() {
+        return score;
+    }
+
+    public AnimalDTO setScore(Double score) {
+        this.score = score;
+        return this;
     }
 
     @Override
@@ -66,7 +80,7 @@ public class AnimalDTO implements Serializable {
         return "AnimalDTO{" +
             "id=" + getId() +
             ", name='" + getName() + "'" +
-            ", promoted='" + isPromoted() + "'" +
+            ", promoted='" + getPromoted() + "'" +
             "}";
     }
 }

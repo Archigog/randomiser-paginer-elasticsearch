@@ -116,23 +116,5 @@ describe('Component Tests', () => {
             expect(service.query).toHaveBeenCalledTimes(2);
             expect(comp.animals[0]).toEqual(jasmine.objectContaining({ id: 123 }));
         });
-        it('should calculate the sort attribute for an id', () => {
-            // WHEN
-            const result = comp.sort();
-
-            // THEN
-            expect(result).toEqual(['id,desc']);
-        });
-
-        it('should calculate the sort attribute for a non-id attribute', () => {
-            // GIVEN
-            comp.predicate = 'name';
-
-            // WHEN
-            const result = comp.sort();
-
-            // THEN
-            expect(result).toEqual(['name,desc', 'id']);
-        });
     });
 });

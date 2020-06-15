@@ -21,4 +21,15 @@ public interface AnimalMapper extends EntityMapper<AnimalDTO, Animal> {
         animal.setId(id);
         return animal;
     }
+
+    default AnimalDTO toDTOWithScore(Animal animal, Double score) {
+        if (animal == null) {
+            return null;
+        }
+        return new AnimalDTO()
+            .setId(animal.getId())
+            .setName(animal.getName())
+            .setPromoted(animal.isPromoted())
+            .setScore(score);
+    }
 }

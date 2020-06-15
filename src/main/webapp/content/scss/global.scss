@@ -112,6 +112,7 @@ Custom alerts for notification
     }
     .toast {
         position: fixed;
+        z-index: 99;
         width: 100%;
         &.left {
             left: 5px;

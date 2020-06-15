@@ -58,10 +58,10 @@ spring:
             hibernate.generate_statistics: true
             hibernate.cache.region.factory_class: io.github.jhipster.config.jcache.BeanClassLoaderAwareJCacheRegionFactory
     data:
-        elasticsearch:
-            properties:
-                path:
-                    home: build/elasticsearch
+        jest:
+            uri: http://localhost:9200
+            username: elastic
+            password: changeme
     liquibase:
         contexts: dev
     mail:
